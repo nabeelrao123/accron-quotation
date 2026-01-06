@@ -576,7 +576,9 @@ const InvoiceForm = () => {
                         {values.items.map((item, index) => (
                           <div
                             key={index}
-                            className="grid grid-cols-4 gap-4 border p-3 rounded-md"
+                            // className="grid grid-cols-4 gap-4 border p-3 rounded-md"
+                            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 border p-3 rounded-md"
+
                           >
                             <div>
                               <Field
