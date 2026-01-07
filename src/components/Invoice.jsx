@@ -125,12 +125,13 @@ export default function Invoice({ formValues }) {
 
                     <div className="mt-6 overflow-x-auto">
                         <table className="w-full table-fixed border-collapse border border-gray-300">
-                            <thead className="bg-blue-900 text-white">
+                            <thead className="bg-gradient-to-r from-blue-950 to-blue-800
+ text-white">
                                 <tr>
-                                    <th className="border p-2 w-1/12 text-left">#</th>
-                                    <th className="border p-2 w-6/12 text-left">Description</th>
-                                    <th className="border p-2 w-2/12 text-left">Quantity</th>
-                                    <th className="border p-2 w-3/12 text-left">Amount</th>
+                                    <th className="border p-2 w-1/12 text-sm sm:text-base  text-center">No</th>
+                                    <th className="border p-2 w-6/12 text-center">Description</th>
+                                    <th className="border p-2 w-2/12 text-center">Quantity</th>
+                                    <th className="border p-2 w-3/12 text-center">Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -138,8 +139,8 @@ export default function Invoice({ formValues }) {
                                     <tr key={index} className="odd:bg-white even:bg-gray-50">
                                         <td className="border p-2">{index + 1}</td>
                                         <td className="border p-2 break-words max-w-[200px]">{item.desc}</td>
-                                        <td className="border p-2">{item.quant}</td>
-                                        <td className="border p-2">{item.amount}</td>
+                                        <td className="border p-2 text-center ">{item.quant}</td>
+                                        <td className="border p-2 text-center ">{item.amount}/-</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -174,15 +175,15 @@ export default function Invoice({ formValues }) {
                         <div className="w-[380px] text-sm sm:text-base space-y-2 border border-gray-300 rounded-md p-4 bg-gray-50">
                             <div className="flex justify-between border-b border-gray-300 pb-1">
                                 <span>Total</span>
-                                <span>326,000</span>
+                                <span>326,000/-</span>
                             </div>
                             <div className="flex justify-between border-b border-gray-300 pb-1">
                                 <span>SRB Tax (15%)</span>
-                                <span>48,900</span>
+                                <span>48,900/-</span>
                             </div>
                             <div className="flex justify-between font-bold text-base sm:text-lg pt-1">
                                 <span>Total Amount</span>
-                                <span>374,900</span>
+                                <span>374,900/-</span>
                             </div>
                         </div>
                     </div>
@@ -255,6 +256,9 @@ export default function Invoice({ formValues }) {
                             </span>
                         </div>
                     </div>
+
+
+
 
 
 

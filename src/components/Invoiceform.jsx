@@ -440,8 +440,8 @@ const InvoiceForm = () => {
       Yup.object({
         desc: Yup.string().required("Description is required"),
         quant: Yup.number()
-          .typeError("Quantity must be a number")
-          .required("Quantity is required"),
+          .typeError("Quantity must be a number"),
+          // .required("Quantity is required"),
         amount: Yup.number()
           .typeError("Amount must be a number")
           .required("Amount is required"),
