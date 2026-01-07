@@ -188,6 +188,11 @@
 import React, { useRef } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import accronlogo from '../assets/accronlogo.jpeg'
+ 
+import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
+
+
 
 export default function Invoice({ formValues }) {
     const invoiceRef = useRef(null);
@@ -224,7 +229,7 @@ export default function Invoice({ formValues }) {
                 <div className="max-w-5xl mx-auto bg-white p-4 sm:p-8 border border-gray-300 rounded-lg shadow">
 
                     {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 border-b pb-4">
+                    {/* <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 sm:gap-4 border-b pb-4">
                         <div>
                             <h1 className="text-lg sm:text-2xl font-bold uppercase">
                                 Accron Engineering
@@ -239,10 +244,60 @@ export default function Invoice({ formValues }) {
                                 Date: <span className="font-medium">{today}</span>
                             </p>
                         </div>
+                    </div> */}
+
+
+
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 border-b pb-4">
+                        {/* Logo on Left */}
+                        <div className="flex-shrink-0">
+                            <img
+                                src={accronlogo} // Replace with your logo path
+                                alt="Accron Logo"
+                                className="h-16 sm:h-20 object-contain"
+                            />
+                        </div>
+
+                        {/* Contact Info Centered */}
+                        <div className="flex-1 flex flex-col items-center text-center">
+                            <p className="text-xs sm:text-sm text-gray-600 italic">INDUSTRIAL. AUTOMATION. SOLUTION </p>
+                            <p className="text-xs sm:text-sm text-gray-600">Innovative Mastery, Enduring Solutions </p>
+                            {/* <p className="text-xs sm:text-sm text-gray-600">+92 317 3169091 | +92 343 3936672</p> */}
+
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-1 sm:gap-4 text-xs sm:text-sm text-gray-600">
+                                {/* Email */}
+                                <div className="flex items-center gap-1">
+                                    <EnvelopeIcon className="h-4 w-4 text-gray-600" />
+                                    <span>accronengineering1@gmail.com</span>
+                                </div>
+
+                                {/* Phone */}
+                                <div className="flex items-center gap-1">
+                                    <PhoneIcon className="h-4 w-4 text-gray-600" />
+                                    <span>+92 317 3169091 | +92 343 3936672</span>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
                     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
                     {/* Customer Info */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 mt-6 text-sm">
+                    {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 mt-6 text-sm">
                         <div className="space-y-1">
                             <p className="text-sm sm:text-base">
                                 <span className="font-bold text-blue-900">Customer:</span> {formValues.customername}
@@ -269,12 +324,55 @@ export default function Invoice({ formValues }) {
                                 <span className="font-bold text-blue-900">Date:</span> {today}
                             </p>
                         </div>
-                    </div>
+                    </div> */}
+
+
+
+<div className="flex flex-col sm:flex-row sm:justify-between mt-6 gap-4 text-sm sm:text-base">
+  {/* Left Side: Customer Info */}
+  <div className="space-y-1">
+    <p>
+      <span className="font-bold text-blue-900">Customer:</span> {formValues.customername}
+    </p>
+    <p>
+      <span className="font-bold text-blue-900">Address:</span> {formValues.address}
+    </p>
+    <p>
+      <span className="font-bold text-blue-900">Order Validity:</span> {formValues.ordervalidity}
+    </p>
+    <p>
+      <span className="font-bold text-blue-900">Person Concerned:</span> {formValues.personconsented}
+    </p>
+  </div>
+
+  {/* Right Side: NTN, SBR, Date */}
+  <div className="space-y-1 text-right mt-4 sm:mt-0">
+    <p>
+      <span className="font-bold text-blue-900">NTN:</span> A105381-0
+    </p>
+    <p>
+      <span className="font-bold text-blue-900">SBR:</span> SA105381-0
+    </p>
+    <p>
+      <span className="font-bold text-blue-900">Date:</span> {today}
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
                     {/* Items Table */}
                     <div className="mt-6 overflow-x-auto">
                         <table className="w-full text-sm sm:text-base border-collapse border border-gray-300">
-                            <thead className="bg-gray-200">
+                            <thead className="bg-blue-900 text-white   ">
                                 <tr>
                                     <th className="border p-2 text-left">#</th>
                                     <th className="border p-2 text-left">Description</th>
