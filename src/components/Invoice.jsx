@@ -200,16 +200,26 @@ export default function Invoice({ formValues }) {
     const downloadPDF = () => {
         const input = invoiceRef.current;
 
-        html2canvas(input, { scale: 2 }).then((canvas) => {
-            const imgData = canvas.toDataURL("image/png");
-            const pdf = new jsPDF("p", "mm", "a4");
+        // html2canvas(input, { scale: 2 }).then((canvas) => {
+        //     const imgData = canvas.toDataURL("image/png");
+        //     const pdf = new jsPDF("p", "mm", "a4");
 
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+        //     const pdfWidth = pdf.internal.pageSize.getWidth();
+        //     const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
 
-            pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-            pdf.save("invoice.pdf");
-        });
+        //     pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+        //     pdf.save("invoice.pdf");
+        // });
+
+        html2canvas(input, { scale: 2, useCORS: true }).then((canvas) => {
+  const imgData = canvas.toDataURL("image/png");
+  const pdf = new jsPDF("p", "mm", "a4");
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+  pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+  pdf.save("invoice.pdf");
+});
+
     };
 
     const today = new Date().toISOString().split("T")[0];
