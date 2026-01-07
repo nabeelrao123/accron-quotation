@@ -37,7 +37,9 @@ export default function Invoice({ formValues }) {
                 <div className="w-[800px] bg-white p-4 sm:p-8 border border-gray-300 rounded-lg shadow">
 
                     {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 border-b pb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 border  px-3 py-3 rounded-md 
+                     bg-gradient-to-r from-blue-950 to-blue-800
+                    ">
                         {/* Logo */}
                         <div className="flex-shrink-0">
                             <img src={accronlogo} alt="Accron Logo" className="h-16 sm:h-20 object-contain" />
@@ -45,9 +47,13 @@ export default function Invoice({ formValues }) {
                         {/* Company Info */}
 
 
-                        <div className="flex-1 flex flex-col items-center text-center">
-                            <p className="text-xs sm:text-sm text-gray-600 italic">INDUSTRIAL. AUTOMATION. SOLUTION</p>
-                            <p className="text-xs sm:text-sm text-gray-600">Innovative Mastery, Enduring Solutions</p>
+                        <div className="flex-1 flex flex-col items-center text-center space-y-3 ">
+                            <p className="sm:text-sm  text-white italic font-semibold " style={{
+                                fontSize: '28px',
+                                textShadow: '3px 3px 6px rgba(0,0,0,0.7)'
+
+                            }}  >INDUSTRIAL. AUTOMATION. SOLUTION</p>
+                            <p className="text-lg sm:text-sm text-white" style={{ fontSize: '20px' }} >Innovative Mastery, Enduring Solutions</p>
 
                             {/* Contact Info */}
 
@@ -56,14 +62,14 @@ export default function Invoice({ formValues }) {
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 mt-1 text-xs sm:text-sm text-gray-600 w-full">
                                 {/* Email */}
                                 <div className="flex items-center gap-1 w-full sm:w-auto justify-center h-5">
-                                    <EnvelopeIcon className="h-4 w-4 flex-shrink-0 align-middle" />
-                                    <span className="whitespace-nowrap align-middle">accronengineering1@gmail.com</span>
+                                    <EnvelopeIcon className="h-4 w-4 text-white flex-shrink-0 align-middle" />
+                                    <span className="whitespace-nowrap text-white align-middle">accronengineering1@gmail.com</span>
                                 </div>
 
                                 {/* Phone */}
                                 <div className="flex items-center gap-1 w-full sm:w-auto justify-center h-5">
-                                    <PhoneIcon className="h-4 w-4 flex-shrink-0 align-middle" />
-                                    <span className="whitespace-nowrap align-middle">+92 317 3169091 | +92 343 3936672</span>
+                                    <PhoneIcon className="h-4 w-4 flex-shrink-0 align-middle text-white " />
+                                    <span className="whitespace-nowrap align-middle text-white">+92 317 3169091 | +92 343 3936672</span>
                                 </div>
                             </div>
 
@@ -208,21 +214,48 @@ export default function Invoice({ formValues }) {
                         <p>Plot no. D/265-A, Hub River Road, S.I.T.E., Karachi.</p>
                     </div> */}
 
-                    <div className="mt-6 bg-blue-900 text-white text-xs sm:text-sm p-2 sm:p-3 rounded">
-                        <div className="flex items-center justify-center sm:justify-start gap-2">
-                            <MapPinIcon className="h-4 w-4 flex-shrink-0" />
-                            <span>Plot no. D/265-A, Hub River Road, S.I.T.E., Karachi</span>
-                        </div>
-                    </div>
-                    <div className="mt-6 bg-blue-900 text-white text-xs sm:text-sm p-2 sm:p-3 rounded">
+
+                    {/* <div className="mt-6 bg-blue-900 text-white text-xs sm:text-sm p-2 sm:p-3 rounded">
                         <div className="flex items-center justify-center sm:justify-start gap-2" style={{ lineHeight: '1.2', minHeight: '1.2em' }}>
-                            {/* ✅ FIX: lineHeight + minHeight helps html2canvas align icon and text */}
                             <MapPinIcon className="h-4 w-4 flex-shrink-0" style={{ verticalAlign: 'middle' }} />
                             <span style={{ verticalAlign: 'middle' }}>
                                 Plot no. D/265-A, Hub River Road, S.I.T.E., Karachi
                             </span>
                         </div>
+                    </div> */}
+
+                    <div className="mt-6 text-white text-xs sm:text-sm border px-3 py-3 sm:p-3 rounded-md
+                                         bg-gradient-to-r from-blue-950 to-blue-800
+
+                    
+                    ">
+                        <div
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '6px',
+                                height: '16px',          // 🔴 icon height ke equal
+                                lineHeight: '16px',      // 🔴 same as height
+                            }}
+                        >
+                            <MapPinIcon
+                                style={{
+                                    width: '16px',
+                                    height: '16px',
+                                    display: 'block',     // 🔴 VERY IMPORTANT
+                                }}
+                            />
+                            <span
+                                style={{
+                                    display: 'block',
+                                    lineHeight: '16px',
+                                }}
+                            >
+                                Plot no. D/265-A, Hub River Road, S.I.T.E. Karachi
+                            </span>
+                        </div>
                     </div>
+
 
 
                 </div>
