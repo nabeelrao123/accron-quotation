@@ -85,16 +85,16 @@ export default function Invoice({ formValues }) {
                     <div className="flex flex-col sm:flex-row sm:justify-between mt-6 gap-4 text-sm sm:text-base">
                         {/* Left Side */}
                         <div className="space-y-1">
-                            <p><span className="font-bold text-blue-900">Customer:</span> {formValues.customername}</p>
-                            <p><span className="font-bold text-blue-900">Address:</span> {formValues.address}</p>
-                            <p><span className="font-bold text-blue-900">Order Validity:</span> {formValues.ordervalidity}</p>
-                            <p><span className="font-bold text-blue-900">Person Concerned:</span> {formValues.personconsented}</p>
+                            <p><span className="font-bold text-blue-800">Customer:</span> {formValues.customername}</p>
+                            <p><span className="font-bold text-blue-800">Address:</span> {formValues.address}</p>
+                            <p><span className="font-bold text-blue-800">Order Validity:</span> {formValues.ordervalidity}</p>
+                            <p><span className="font-bold text-blue-800">Person Concerned:</span> {formValues.personconsented}</p>
                         </div>
                         {/* Right Side */}
                         <div className="space-y-1 text-right mt-4 sm:mt-0">
-                            <p><span className="font-bold text-blue-900">NTN:</span> A105381-0</p>
-                            <p><span className="font-bold text-blue-900">SBR:</span> SA105381-0</p>
-                            <p><span className="font-bold text-blue-900">Date:</span> {today}</p>
+                            <p><span className="font-bold text-blue-800">NTN:</span> A105381-0</p>
+                            <p><span className="font-bold text-blue-800">SBR:</span> SA105381-0</p>
+                            <p><span className="font-bold text-blue-800">Date:</span> {today}</p>
                         </div>
                     </div>
 
@@ -125,13 +125,13 @@ export default function Invoice({ formValues }) {
 
                     <div className="mt-6 overflow-x-auto">
                         <table className="w-full table-fixed border-collapse border border-gray-300">
-                            <thead className="bg-gradient-to-r from-blue-950 to-blue-800
+                            <thead className="bg-blue-950
  text-white">
                                 <tr>
-                                    <th className="border p-2 w-1/12 text-sm sm:text-base  text-center">No</th>
-                                    <th className="border p-2 w-6/12 text-center">Description</th>
-                                    <th className="border p-2 w-2/12 text-center">Quantity</th>
-                                    <th className="border p-2 w-3/12 text-center">Amount</th>
+                                    <th className="border p-2 w-1/12 font-light text-center">No</th>
+                                    <th className="border p-2 w-6/12 text-center font-light ">Description</th>
+                                    <th className="border p-2 w-2/12 text-center font-light ">Quantity</th>
+                                    <th className="border p-2 w-3/12 text-center font-light ">Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -171,7 +171,7 @@ export default function Invoice({ formValues }) {
 
 
                     {/* Totals */}
-                    <div className="mt-6 flex justify-end">
+                    {/* <div className="mt-6 flex justify-end">
                         <div className="w-[380px] text-sm sm:text-base space-y-2 border border-gray-300 rounded-md p-4 bg-gray-50">
                             <div className="flex justify-between border-b border-gray-300 pb-1">
                                 <span>Total</span>
@@ -186,11 +186,75 @@ export default function Invoice({ formValues }) {
                                 <span>374,900/-</span>
                             </div>
                         </div>
+                    </div> */}
+
+
+
+
+                    <div className="mt-6 flex justify-end">
+                        <div className="w-[380px] border border-gray-300 overflow-hidden text-sm sm:text-base">
+
+                            {/* Row 1 */}
+                            <div className="grid grid-cols-2 border-b border-gray-300">
+                                <div className=" bg-gradient-to-r from-blue-950 to-blue-800 text-white text-center  px-3 py-2 font-medium">
+                                    Total
+                                </div>
+                                <div className="px-3 py-2  text-center">
+                                    326,000/-
+                                </div>
+                            </div>
+
+                            {/* Row 2 */}
+                            <div className="grid grid-cols-2 border-b  border-gray-300">
+                                <div className=" bg-gradient-to-r from-blue-950 to-blue-800 text-white  text-center px-3 py-2 font-medium">
+                                    SRB Tax (15%)
+                                </div>
+                                <div className="px-3 py-2  text-center">
+                                    48,900/-
+                                </div>
+                            </div>
+
+                            {/* Row 3 */}
+                            <div className="grid grid-cols-2">
+                                <div className=" bg-gradient-to-r from-blue-950 to-blue-800 text-white  text-center  px-3 py-2 font-bold">
+                                    Total Amount
+                                </div>
+                                <div className="px-3 py-2 text-center font-bold text-base sm:text-lg">
+                                    374,900/-
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     {/* Terms */}
                     <div className="mt-6 text-sm sm:text-base">
-                        <h3 className="font-semibold mb-2">Terms of Payment</h3>
+                        <h3 className="font-bold text-blue-800 mb-2">Terms of Payment</h3>
                         <ul className="list-disc pl-5 space-y-1 text-gray-700">
                             <li>Further reduction will be applied if service is extended to more machines.</li>
                             <li>70% advance payment before project initiation.</li>
@@ -225,38 +289,34 @@ export default function Invoice({ formValues }) {
                         </div>
                     </div> */}
 
+
                     <div className="mt-6 text-white text-xs sm:text-sm border px-3 py-3 sm:p-3 rounded-md
                                          bg-gradient-to-r from-blue-950 to-blue-800
-
-                    
                     ">
                         <div
                             style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
+                                display: 'flex',
+                                alignItems: 'center', // Vertically align items
                                 gap: '6px',
-                                height: '16px',          // 🔴 icon height ke equal
-                                lineHeight: '16px',      // 🔴 same as height
                             }}
                         >
                             <MapPinIcon
                                 style={{
                                     width: '16px',
                                     height: '16px',
-                                    display: 'block',     // 🔴 VERY IMPORTANT
+                                    flexShrink: 0, // Prevent icon from shrinking
                                 }}
                             />
                             <span
                                 style={{
-                                    display: 'block',
-                                    lineHeight: '16px',
+                                    display: 'inline-block',
+                                    verticalAlign: 'middle', // Align with icon
                                 }}
                             >
                                 Plot no. D/265-A, Hub River Road, S.I.T.E. Karachi
                             </span>
                         </div>
                     </div>
-
 
 
 
