@@ -61,15 +61,15 @@ export default function Invoice({ formValues }) {
 
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 mt-1 text-xs sm:text-sm text-gray-600 w-full">
                                 {/* Email */}
-                                <div className="flex items-center gap-1 w-full sm:w-auto justify-center h-5">
-                                    <EnvelopeIcon className="h-4 w-4 text-white flex-shrink-0 align-middle" />
-                                    <span className="whitespace-nowrap text-white align-middle">accronengineering1@gmail.com</span>
+                                <div className="flex items-center gap-x-2 w-full sm:w-auto justify-center h-5">
+                                    <EnvelopeIcon className="h-4 w-4 text-white flex-shrink-0  align-middle" />
+                                    <span className="whitespace-nowrap text-white align-middle mb-3">accronengineering1@gmail.com</span>
                                 </div>
 
                                 {/* Phone */}
-                                <div className="flex items-center gap-1 w-full sm:w-auto justify-center h-5">
+                                <div className="flex items-center gap-x-2 w-full sm:w-auto justify-center h-5">
                                     <PhoneIcon className="h-4 w-4 flex-shrink-0 align-middle text-white " />
-                                    <span className="whitespace-nowrap align-middle text-white">+92 317 3169091 | +92 343 3936672</span>
+                                    <span className="whitespace-nowrap align-middle text-white mb-3 ">+92 317 3169091 | +92 343 3936672</span>
                                 </div>
                             </div>
 
@@ -125,11 +125,11 @@ export default function Invoice({ formValues }) {
 
                     <div className="mt-6 overflow-x-auto">
                         <table className="w-full table-fixed border-collapse border border-gray-300">
-                            <thead className="bg-blue-950
- text-white">
-                                <tr>
-                                    <th className="border p-2 w-1/12 font-light text-center">No</th>
-                                    <th className="border p-2 w-6/12 text-center font-light ">Description</th>
+                            <thead className="bg-blue-800 mb-4
+ text-white ">
+                                <tr >
+                                    <th className="border mb-4  w-1/12 font-light text-center">No</th>
+                                    <th className="border  w-6/12 text-center font-light ">Description</th>
                                     <th className="border p-2 w-2/12 text-center font-light ">Quantity</th>
                                     <th className="border p-2 w-3/12 text-center font-light ">Amount</th>
                                 </tr>
@@ -146,27 +146,6 @@ export default function Invoice({ formValues }) {
                             </tbody>
                         </table>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -229,34 +208,11 @@ export default function Invoice({ formValues }) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     {/* Terms */}
                     <div className="mt-6 text-sm sm:text-base">
                         <h3 className="font-bold text-blue-800 mb-2">Terms of Payment</h3>
-                        <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                            <li>Further reduction will be applied if service is extended to more machines.</li>
+                        <ul className="list-disc pl-5 space-y-1 text-gray-700  ">
+                            <li> Further reduction will be applied if service is extended to more machines. </li>
                             <li>70% advance payment before project initiation.</li>
                             <li>30% payment upon final delivery confirmation.</li>
                         </ul>
@@ -274,62 +230,23 @@ export default function Invoice({ formValues }) {
                         </div>
                     </div>
 
-                    {/* Footer */}
-                    {/* <div className="mt-6 text-xs bg-blue-900 sm:text-sm text-white text-center sm:text-left">
-                        <p>Plot no. D/265-A, Hub River Road, S.I.T.E., Karachi.</p>
-                    </div> */}
 
 
-                    {/* <div className="mt-6 bg-blue-900 text-white text-xs sm:text-sm p-2 sm:p-3 rounded">
-                        <div className="flex items-center justify-center sm:justify-start gap-2" style={{ lineHeight: '1.2', minHeight: '1.2em' }}>
-                            <MapPinIcon className="h-4 w-4 flex-shrink-0" style={{ verticalAlign: 'middle' }} />
-                            <span style={{ verticalAlign: 'middle' }}>
-                                Plot no. D/265-A, Hub River Road, S.I.T.E., Karachi
-                            </span>
-                        </div>
-                    </div> */}
 
-
-                    <div className="mt-6 text-white text-xs sm:text-sm border px-3 py-3 sm:p-3 rounded-md
-                                         bg-gradient-to-r from-blue-950 to-blue-800
-                    ">
-                        <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center', // Vertically align items
-                                gap: '6px',
-                            }}
-                        >
-                            <MapPinIcon
-                                style={{
-                                    width: '16px',
-                                    height: '16px',
-                                    flexShrink: 0, // Prevent icon from shrinking
-                                }}
-                            />
-                            <span
-                                style={{
-                                    display: 'inline-block',
-                                    verticalAlign: 'middle', // Align with icon
-                                }}
-                            >
+                    <div className="mt-6 border rounded-md px-3 py-3 text-xs sm:text-sm text-white 
+                     bg-gradient-to-r from-blue-950 to-blue-800">
+                        <div className="flex gap-x-2 items-center ">
+                            <MapPinIcon className="w-4 h-4 align-middle flex-shrink-0 " />
+                            <span className="mb-3" >
                                 Plot no. D/265-A, Hub River Road, S.I.T.E. Karachi
                             </span>
                         </div>
                     </div>
-
-
-
-
 
                 </div>
             </div>
         </div>
     );
 }
-
-
-
-
 
 
