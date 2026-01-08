@@ -85,16 +85,16 @@ export default function Invoice({ formValues }) {
                     <div className="flex flex-col sm:flex-row sm:justify-between mt-6 gap-4 text-sm sm:text-base">
                         {/* Left Side */}
                         <div className="space-y-1">
-                            <p><span className="font-bold text-blue-800">Customer:</span> {formValues.customername}</p>
-                            <p><span className="font-bold text-blue-800">Address:</span> {formValues.address}</p>
-                            <p><span className="font-bold text-blue-800">Order Validity:</span> {formValues.ordervalidity}</p>
-                            <p><span className="font-bold text-blue-800">Person Concerned:</span> {formValues.personconsented}</p>
+                            <p className=" font-medium " ><span className="font-bold text-blue-800">Customer:</span> {formValues.customername}</p>
+                            <p className=" font-medium " ><span className="font-bold text-blue-800">Address:</span> {formValues.address}</p>
+                            <p className=" font-medium " ><span className="font-bold text-blue-800">Order Validity:</span> {formValues.ordervalidity}</p>
+                            <p className=" font-medium " ><span className="font-bold text-blue-800">Person Concerned:</span> {formValues.personconsented}</p>
                         </div>
                         {/* Right Side */}
                         <div className="space-y-1 text-right mt-4 sm:mt-0">
-                            <p><span className="font-bold text-blue-800">NTN:</span> A105381-0</p>
-                            <p><span className="font-bold text-blue-800">SBR:</span> SA105381-0</p>
-                            <p><span className="font-bold text-blue-800">Date:</span> {today}</p>
+                            <p className="font-medium" ><span className="font-bold text-blue-800">NTN:</span> A105381-0</p>
+                            <p className="font-medium" ><span className="font-bold text-blue-800">SBR:</span> SA105381-0</p>
+                            <p className="font-medium" ><span className="font-bold text-blue-800">Date:</span> {today}</p>
                         </div>
                     </div>
 
@@ -136,11 +136,11 @@ export default function Invoice({ formValues }) {
                             </thead>
                             <tbody>
                                 {formValues?.items?.map((item, index) => (
-                                    <tr key={index} className="odd:bg-white even:bg-gray-50">
-                                        <td className="border p-2">{index + 1}</td>
-                                        <td className="border p-2 break-words max-w-[200px]">{item.desc}</td>
-                                        <td className="border p-2 text-center ">{item.quant}</td>
-                                        <td className="border p-2 text-center ">{item.amount}/-</td>
+                                    <tr key={index} className="">
+                                        <td className="border p-2 font-medium ">{index + 1}</td>
+                                        <td className="border font-medium p-2 break-words max-w-[200px]">{item.desc}</td>
+                                        <td className="border font-medium p-2 text-center ">{item.quant}</td>
+                                        <td className="border font-medium p-2 text-center ">{item.amount}/-</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -178,7 +178,7 @@ export default function Invoice({ formValues }) {
                                 <div className=" bg-gradient-to-r from-blue-950 to-blue-800 text-white text-center  px-3 py-2 font-medium">
                                     Total
                                 </div>
-                                <div className="px-3 py-2  text-center">
+                                <div className="px-3 py-2  text-center font-medium">
                                     326,000/-
                                 </div>
                             </div>
@@ -188,7 +188,7 @@ export default function Invoice({ formValues }) {
                                 <div className=" bg-gradient-to-r from-blue-950 to-blue-800 text-white  text-center px-3 py-2 font-medium">
                                     SRB Tax (15%)
                                 </div>
-                                <div className="px-3 py-2  text-center">
+                                <div className="px-3 py-2  text-center font-medium">
                                     48,900/-
                                 </div>
                             </div>
@@ -198,7 +198,7 @@ export default function Invoice({ formValues }) {
                                 <div className=" bg-gradient-to-r from-blue-950 to-blue-800 text-white  text-center  px-3 py-2 font-bold">
                                     Total Amount
                                 </div>
-                                <div className="px-3 py-2 text-center font-bold text-base sm:text-lg">
+                                <div className="px-3 py-2 text-center font-bold text-[28px] sm:text-lg">
                                     374,900/-
                                 </div>
                             </div>
@@ -210,9 +210,9 @@ export default function Invoice({ formValues }) {
 
                     {/* Terms */}
                     <div className="mt-6 text-sm sm:text-base">
-                        <h3 className="font-bold text-blue-800 mb-2">Terms of Payment</h3>
-                        <ul className="list-disc pl-5 space-y-1 text-gray-700  ">
-                            <li> Further reduction will be applied if service is extended to more machines. </li>
+                        <h3 className="font-bold text-blue-800 mb-2">Terms of Payment:</h3>
+                        <ul className="list-disc pl-5 space-y-1 text-gray-700">
+                            <li >Further reduction will be applied if service is extended to more machines. </li>
                             <li>70% advance payment before project initiation.</li>
                             <li>30% payment upon final delivery confirmation.</li>
                         </ul>
