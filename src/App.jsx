@@ -8,6 +8,7 @@ import Container from './components/Container'
 import { menuItems } from './data'
 import Invoice from './components/Invoice'
 import Invoiceform from './components/Invoiceform'
+import Mohyl from './Mohyl'
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <div className="bg-accent" >
         {/* <Container> */}
           {/* <Invoice /> */}
-          <Invoiceform/>
+          {/* <Invoiceform/> */}
+          <Mohyl/>
         {/* </Container> */}
       </div>
 
