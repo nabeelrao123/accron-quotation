@@ -1083,7 +1083,7 @@ export default function Mohyl() {
             {/* Contact */}
 
             <div>
-              <h4 className="font-black">Contact</h4>
+              <h4 className="font-black">Contacsdsdt</h4>
 
               <div className="mt-6 space-y-4 text-sm text-slate-400">
                 <div className="flex gap-3">
